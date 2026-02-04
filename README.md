@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TaskFlow
 
-## Getting Started
+Սա Next.js-ով և Supabase-ով պատրաստված առաջադրանքների կառավարման պրոյեկտ է։
 
-First, run the development server:
+## Ինչպես միացնել (Setup)
 
+1. Տեղադրել գրադարանները.
 ```bash
+npm install
+
+
+2. Ստեղծել .env.local ֆայլ և ավելացնել Supabase-ի տվյալները.
+
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key    
+
+3. Միացնել պրոյեկտը.
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Օգտագործված գրադարաններ (Dependencies)
 
-## Learn More
+Framework: Next.js (App Router)
 
-To learn more about Next.js, take a look at the following resources:
+Database & Auth: Supabase (@supabase/ssr, @supabase/supabase-js)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+State Management: Zustand
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Data Fetching: TanStack React Query (@tanstack/react-query)
 
-## Deploy on Vercel
+Styling: Tailwind CSS
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+Ֆունկցիոնալ (Features)
+Օգտատերերի գրանցում և մուտք (Supabase Auth)
+
+Մուտքի ստուգում Middleware-ի միջոցով
+
+Պրոյեկտների ստեղծում ըստ օգտատիրոջ ID-ի
+
+Դուրս գալու հնարավորություն (Logout)
+
+
+
+1. `git add .`
+2. `git commit -m "Update README"`
+3. `git push origin main`
+
+
+
