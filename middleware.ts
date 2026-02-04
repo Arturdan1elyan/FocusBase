@@ -26,16 +26,13 @@ export async function middleware(request: NextRequest) {
     }
   )
 
-  // ԿԱՐԵՎՈՐ. getUser()-ը ստուգում է թոքենը սերվերում
   const { data: { user } } = await supabase.auth.getUser()
   console.log("Middleware-ը տեսնում է օգտատիրոջը:", user?.email || "ՈՉ ՈՔ ՉԿԱ");
 
-  // 1. Եթե մարդը մուտք չի գործել ու փորձում է մտնել գլխավոր էջ
   if (!user && request.nextUrl.pathname === '/') {
     return NextResponse.redirect(new URL('/login', request.url))
   }
 
-  // 2. Եթե մարդը մուտք է գործել ու փորձում է մտնել login էջ
   if (user && request.nextUrl.pathname === '/login') {
     return NextResponse.redirect(new URL('/', request.url))
   }
